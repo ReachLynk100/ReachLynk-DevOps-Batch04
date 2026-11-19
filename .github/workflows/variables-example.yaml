@@ -22,6 +22,7 @@ jobs:
     steps:
       - name: we are going to deploy
         run: echo "Hello! ${{ vars.OS_NAME }}"
-      - name: our application name
-        run: echo "Our application name is: ${{ vars.APP_NAME }}"
+      - name: Our app name
+        run: echo "Our app name is ${{ vars.APP_NAME }}"
+        
         
