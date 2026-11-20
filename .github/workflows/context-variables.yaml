@@ -1,0 +1,49 @@
+name: GitHub Context Variables Demo
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  context-demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Repository Information
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Repository Owner: ${{ github.repository_owner }}"
+          echo "Repository Name: ${{ github.event.repository.name }}"
+
+      - name: Display Developer Information
+        run: |
+          echo "Developer: ${{ github.actor }}"
+          echo "Triggered By: ${{ github.triggering_actor }}"
+
+      - name: Display Branch Information
+        run: |
+          echo "Branch Name: ${{ github.ref_name }}"
+          echo "Git Reference: ${{ github.ref }}"
+
+      - name: Display Commit Information
+        run: |
+          echo "Commit ID: ${{ github.sha }}"
+          echo "Commit Message: ${{ github.event.head_commit.message }}"
+
+      - name: Display Workflow Information
+        run: |
+          echo "Workflow Name: ${{ github.workflow }}"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Run Number: ${{ github.run_number }}"
+
+      - name: Display Runner Information
+        run: |
+          echo "Operating System: ${{ runner.os }}"
+          echo "Architecture: ${{ runner.arch }}"
+          echo "Runner Name: ${{ runner.name }}"
+          echo "Operating System: ${{ runner.os }}"
+          echo "Architecture: ${{ runner.arch }}"
+          echo "Runner Name: ${{ runner.name }}"
